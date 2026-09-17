@@ -1,0 +1,23 @@
+
+session 1
+BEGIN TRANSACTION;
+
+UPDATE Customers
+SET City = 'Baltimore'
+WHERE CustomerID = 1;
+
+-- Leave transaction open
+session 2
+UPDATE Customers
+SET City = 'Towson'
+WHERE CustomerID = 1;
+
+
+SELECT
+    session_id,
+    blocking_session_id,
+    wait_type,
+    wait_time,
+    status
+FROM sys.dm_exec_requests
+WHERE blocking_session_id <> 0;
