@@ -1,0 +1,10 @@
+EXEC sp_helpindex 'Orders';
+GO
+
+EXEC sp_helpindex 'Customers';
+GO
+
+CREATE INDEX IX_Orders_CustomerID_OrderDate
+ON Orders(CustomerID, OrderDate)
+INCLUDE (SalesAmount);
+GO
