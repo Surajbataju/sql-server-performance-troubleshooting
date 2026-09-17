@@ -1,0 +1,3 @@
+ALTER DATABASE SalesPerformanceLab
+SET QUERY_STORE = ON;
+GO
