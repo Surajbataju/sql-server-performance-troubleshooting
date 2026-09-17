@@ -1,0 +1,16 @@
+SET STATISTICS TIME ON;
+SET STATISTICS IO ON;
+
+SELECT
+    c.State,
+    SUM(o.SalesAmount) AS TotalSales
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+WHERE c.State = 'MD'
+AND o.OrderDate >= '2026-01-01'
+AND o.OrderDate < '2027-01-01'
+GROUP BY c.State;
+
+SET STATISTICS IO OFF;
+SET STATISTICS TIME OFF;
