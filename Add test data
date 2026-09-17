@@ -1,0 +1,8 @@
+INSERT INTO Customers
+(CustomerName, City, State)
+VALUES
+('John Smith', 'Baltimore', 'MD'),
+('Mary Jones', 'Columbia', 'MD'),
+('David Brown', 'Towson', 'MD'),
+('Lisa Wilson', 'Annapolis', 'MD');
+GO
